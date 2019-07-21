@@ -39,7 +39,7 @@ def read_data(readNumber, readSubNumber):
 # In[4]:
 
 
-# model sets and parameters for FCT model
+# model sets and parameters for Solver model
 def FCTSetParam(jobsCount, resourcesCount, duration, resourcesUsage, availableResources, scenarioCount,
                 subScenarioCount):
     activities = np.array(range(jobsCount))
@@ -75,7 +75,7 @@ def scenarioGen(scenarios, jobsCount, duration, activities):
 # In[6]:
 
 
-# define variables of FCT model
+# define variables of Solver model
 def addFCTVars(activities, resources, T, availableResources):
     x = FCT.addVars(activities, activities, lb=0.0, ub=1.0, vtype='B',
                     name="X")  # one if activity i complete before activity j starts
@@ -94,7 +94,7 @@ def addFCTVars(activities, resources, T, availableResources):
 # In[7]:
 
 
-# define variables of FCT model
+# define variables of Solver model
 def addFCTVarsMM(activities, resources, T, availableResources):
     x = FCT.addVars(activities, activities, lb=0.0, ub=1.0, vtype='B',
                     name="X")  # one if activity i complete before activity j starts
@@ -109,7 +109,7 @@ def addFCTVarsMM(activities, resources, T, availableResources):
 # In[8]:
 
 
-# define variables of FCT model
+# define variables of Solver model
 def addFCTVarsXX(activities, resources, T, availableResources):
     s = FCT.addVars(activities, scenarios, lb=0.0, ub=T, vtype='C',
                     name="S")  # start time of activity i in scenario s
@@ -126,7 +126,7 @@ def addFCTVarsXX(activities, resources, T, availableResources):
 # In[9]:
 
 
-# constraint 2.5 of FCT model
+# constraint 2.5 of Solver model
 def addFCTConst1(activities, successors, x):
     FCT.addConstrs(
         (x[activityI, activityJ]
@@ -140,7 +140,7 @@ def addFCTConst1(activities, successors, x):
 # In[10]:
 
 
-# constraint 2.6a of FCT model
+# constraint 2.6a of Solver model
 def addFCTConst2a(activities, x, s, p, M, scenarios):
     FCT.addConstrs(
         (s[activityJ, scenario] - s[activityI, scenario]
@@ -155,7 +155,7 @@ def addFCTConst2a(activities, x, s, p, M, scenarios):
 # In[11]:
 
 
-# constraint 2.6a of FCT model
+# constraint 2.6a of Solver model
 def addFCTConst2aMM(activities, x, s, ppp, M):
     FCT.addConstrs(
         (s[activityJ] - s[activityI]
@@ -169,7 +169,7 @@ def addFCTConst2aMM(activities, x, s, ppp, M):
 # In[12]:
 
 
-# constraint 2.6b of FCT model
+# constraint 2.6b of Solver model
 def addFCTConst2b(activities, s, o, scenarios):
     FCT.addConstrs(
         (s[activity, scenario]
@@ -236,7 +236,7 @@ text = 'adatatg'
 # In[13]:
 
 
-# constraint 2.7 of FCT model
+# constraint 2.7 of Solver model
 def addFCTConst3(activities, x, f, resources, N):
     FCT.addConstrs(
         (f[activityI, activityJ, resource] - N * x[activityI, activityJ]
@@ -251,7 +251,7 @@ def addFCTConst3(activities, x, f, resources, N):
 # In[14]:
 
 
-# constraint 2.8 of FCT model
+# constraint 2.8 of Solver model
 def addFCTConst4(activities, f, resources, d):
     FCT.addConstrs(
         (quicksum(f[activityI, activityJ, resource]
@@ -267,7 +267,7 @@ def addFCTConst4(activities, f, resources, d):
 # In[15]:
 
 
-# constraint 2.9 of FCT model
+# constraint 2.9 of Solver model
 def addFCTConst5(activities, f, resources, d):
     FCT.addConstrs(
         (quicksum(f[activityI, activityJ, resource]
@@ -283,7 +283,7 @@ def addFCTConst5(activities, f, resources, d):
 # In[16]:
 
 
-# constraint 2.10a of FCT model
+# constraint 2.10a of Solver model
 def addFCTConst6(activities, f, resources, availableResources):
     FCT.addConstrs(
         (quicksum(f[activities[0], activityJ, resource]
@@ -298,7 +298,7 @@ def addFCTConst6(activities, f, resources, availableResources):
 # In[17]:
 
 
-# constraint 2.10b of FCT model
+# constraint 2.10b of Solver model
 def addFCTConst7(activities, f, resources, availableResources):
     FCT.addConstrs(
         (quicksum(f[activityI, activities[-1], resource]
@@ -327,7 +327,7 @@ def addFCTConst9(activities, scenarios, scenarioCount, s, makespan):
 # In[19]:
 
 
-# Objective of FCT model -- min cost
+# Objective of Solver model -- min cost
 def addFCTObj(activities, s, scenarios, scenarioCount, o):
     obj = (quicksum(s[activity, scenario] - o[activity]
                     for activity in activities
@@ -338,7 +338,7 @@ def addFCTObj(activities, s, scenarios, scenarioCount, o):
 # In[20]:
 
 
-# Objective of FCT model -- min makespan det
+# Objective of Solver model -- min makespan det
 def addFCTObjMM(activities, s):
     obj = (s[activities[-1]])
     FCT.setObjective(obj, GRB.MINIMIZE)
@@ -347,7 +347,7 @@ def addFCTObjMM(activities, s):
 # In[21]:
 
 
-# Objective of FCT model -- min expected makespan
+# Objective of Solver model -- min expected makespan
 def addFCTObjdW(activities, s, scenarios, scenarioCount):
     obj = (quicksum(s[activities[-1], scenario] for scenario in scenarios) / scenarioCount)
     FCT.setObjective(obj, GRB.MINIMIZE)
@@ -377,8 +377,8 @@ for i in Number:
         pMM = list(range(jobsCount))
         for act in range(jobsCount):
             pMM[act] = sum(p[act]) / scnCount
-        FCT = Model('FCT: MIN makespan for DETERMINISTIC')
-        # FCT.setParam('TimeLimit', 3600)
+        FCT = Model('Solver: MIN makespan for DETERMINISTIC')
+        # Solver.setParam('TimeLimit', 3600)
         x, s, f = addFCTVarsMM(activities, resources, T, availableResources)
         addFCTConst1(activities, successors, x)
         addFCTConst2aMM(activities, x, s, pMM, M)
@@ -433,8 +433,8 @@ for i in Number:
         ##############################################################################################################2
 
         subP = scenarioGen(subScenarios, jobsCount, duration, activities)
-        FCT = Model('FCT: MIN makespan for SCENARIO base')
-        # FCT.setParam('TimeLimit', 3600)
+        FCT = Model('Solver: MIN makespan for SCENARIO base')
+        # Solver.setParam('TimeLimit', 3600)
         x, s, f, o, e = addFCTVars(activities, resources, T, availableResources)
         addFCTConst1(activities, successors, x)
         addFCTConst2a(activities, x, s, subP, M, subScenarios)
@@ -497,7 +497,7 @@ for i in Number:
         x = x.astype(int)
 
         FCT = Model('for fixed X: MIN scenario used makespan | use x of dW')
-        # FCT.setParam('TimeLimit', 10*60)
+        # Solver.setParam('TimeLimit', 10*60)
         s, f, o, e = addFCTVarsXX(activities, resources, T, availableResources)
         #             addFCTConst1(activities, successors, x)
         addFCTConst2a(activities, x, s, p, M, scenarios)
@@ -545,7 +545,7 @@ for i in Number:
         x = x.astype(int)
 
         FCT = Model('for fixed X: MIN scenario used makespan | use x of MM')
-        # FCT.setParam('TimeLimit', 10*60)
+        # Solver.setParam('TimeLimit', 10*60)
         s, f, o, e = addFCTVarsXX(activities, resources, T, availableResources)
         #             addFCTConst1(activities, successors, x)
         addFCTConst2a(activities, x, s, p, M, scenarios)
@@ -604,8 +604,8 @@ for i in Number:
                 len(makespansXX)))
             print("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
 
-            FCT = Model('FCT: for fixed X, bounded makespan: MIN cost')
-            # FCT.setParam('TimeLimit', 10*60)
+            FCT = Model('Solver: for fixed X, bounded makespan: MIN cost')
+            # Solver.setParam('TimeLimit', 10*60)
             s, f, o, e = addFCTVarsXX(activities, resources, T, availableResources)
             #             addFCTConst1(activities, successors, x)
             addFCTConst2a(activities, x, s, p, M, scenarios)
@@ -678,8 +678,8 @@ for i in Number:
                 len(makespansWW)))
             print("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
 
-            FCT = Model('FCT: for fixed X, bounded makespan: MIN cost')
-            # FCT.setParam('TimeLimit', 10*60)
+            FCT = Model('Solver: for fixed X, bounded makespan: MIN cost')
+            # Solver.setParam('TimeLimit', 10*60)
             s, f, o, e = addFCTVarsXX(activities, resources, T, availableResources)
             #             addFCTConst1(activities, successors, x)
             addFCTConst2a(activities, x, s, p, M, scenarios)
@@ -920,8 +920,8 @@ for i in Number:
                 len(makespansWW)))
             print("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
 
-            FCT = Model('FCT: for fixed X, bounded makespan: MIN cost')
-            # FCT.setParam('TimeLimit', 10*60)
+            FCT = Model('Solver: for fixed X, bounded makespan: MIN cost')
+            # Solver.setParam('TimeLimit', 10*60)
             s, f, o, e = addFCTVarsXX(activities, resources, T, availableResources)
             #             addFCTConst1(activities, successors, x)
             addFCTConst2a(activities, x, s, p, M, scenarios)

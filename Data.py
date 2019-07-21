@@ -21,6 +21,8 @@ class Data:
         self.sample_size = None  # sample size
         self.df = self.read_data(test_num)
         self.p_scn = None
+        self.gamma = 0.01
+        self.w = None
 
     def read_data(self, test_num):
         file_name = 'J30' + str(test_num[0]) + '_' + str(test_num[1]) + '.RCP'
@@ -54,12 +56,4 @@ class Data:
                 else:
                     duration_scn[act, scn] = self.duration[act] * (1 - 5 / 13 * rnd_list[act])
         self.p_scn = dict(zip(self.activities, duration_scn))
-
-
-X = Data((10,10))
-X.gen_scn(3, 2)
-print(X.p_scn)
-print(type(X.p_scn))
-
-print(X.duration)
-print(len(X.duration), type(X.duration))
+        self.w = [1 * (np.random.rand() > 0.75) for _ in self.activities]
