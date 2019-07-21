@@ -12,6 +12,7 @@ class Data:
         self.resources = None
         self.scenarios = None
         self.samples = None
+        self.available_resources = None
         self.big_t = None  # upper bound on the duration of a project
         self.big_r = None  # upper bound on the amount of resources
         self.duration = None  # duration of each activity
@@ -34,8 +35,8 @@ class Data:
         self.resources = np.array(range(resources_count))
         self.res_use = dict(zip(self.activities, resources_usage))
         self.big_t = 150
-        available_resources = df.iloc[1, 0:resources_count].values
-        self.big_r = available_resources.max()
+        self.available_resources = df.iloc[1, 0:resources_count].values
+        self.big_r = self.available_resources.max()
         return df
 
     def gen_scn(self, scn_count, sample_size):
@@ -53,3 +54,12 @@ class Data:
                 else:
                     duration_scn[act, scn] = self.duration[act] * (1 - 5 / 13 * rnd_list[act])
         self.p_scn = dict(zip(self.activities, duration_scn))
+
+
+X = Data((10,10))
+X.gen_scn(3, 2)
+print(X.p_scn)
+print(type(X.p_scn))
+
+print(X.duration)
+print(len(X.duration), type(X.duration))
