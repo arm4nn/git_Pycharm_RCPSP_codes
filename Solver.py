@@ -4,12 +4,13 @@ from Data import Data
 
 
 class Solver:
-    def __init__(self, test_num, model_type):
+    def __init__(self, test_num=(1,1), model_type='fct', sample_size=1, scn_count=1):
         """
         :param test_num: (<1:48>,<1:10>)
         :param model_type: 'fct', 'sfct', or 'isfct'
         """
         self.data = Data(test_num)
+        self.data.gen_scn(sample_size, scn_count)
         self.grb = Model('model: Solver')
         if model_type not in {'fct', 'sfct', 'isfct'}:
             raise Exception("model_name should be in {'fct', 'sfct', 'isfct'}")
@@ -36,8 +37,8 @@ class Solver:
         self.add_const_6()
         self.add_const_7()
         self.add_obj()
-        self.grb.setParam('TimeLimit', 5)
-        self.grb.setParam('OutputFlag', 0)
+        self.grb.setParam('TimeLimit', 30)
+        # self.grb.setParam('OutputFlag', 0)
         self.grb.update()
         self.grb.optimize()
         if self.grb.status == 2:
@@ -65,7 +66,7 @@ class Solver:
             self.z = self.grb.addVars(self.data.activities, lb=0.0, ub=self.data.big_t, vtype='C', name="Z")
         elif self.type in {'sfct', 'isfct'}:
             # start time of activity i in scenario s
-            self.z = self.grb.addVars(self.data.activities, self.data.scenarios, lb=0.0, ub=self.data.big_t, vtype='C',
+            self.z = self.grb.addVars(self.data.activities, self.data.samples, lb=0.0, ub=self.data.big_t, vtype='C',
                                       name="Z")
             if self.type in {'isfct'}:
                 # delivery date of procured materials/equipment for activity i
@@ -83,7 +84,7 @@ class Solver:
     def add_const_2a(self):
         if self.type in {'sfct', 'isfct'}:
             self.grb.addConstrs(
-                (self.z[j, s] - self.z[i, s] >= self.data.p_scn[i][s] - self.data.big_t * (1 - self.x[i, j])
+                (self.z[j, s] - self.z[i, s] >= self.data.p_sample[i][s] - self.data.big_t * (1 - self.x[i, j])
                  for s in self.data.samples
                  for i in self.data.activities[:-1]
                  for j in self.data.activities[1:]),
@@ -154,3 +155,4 @@ class Solver:
         else:
             raise Exception("model_name should be in {'fct', 'sfct', 'isfct'}")
         self.grb.setObjective(obj, GRB.MINIMIZE)
+

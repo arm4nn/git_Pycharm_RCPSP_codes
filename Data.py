@@ -7,6 +7,7 @@ class Data:
         """
         :param test_num: (<1:48>,<1:10>)
         """
+        self.test_num = test_num
         self.activities = None
         self.successors = None
         self.resources = None
@@ -19,13 +20,14 @@ class Data:
         self.res_use = None  # resource usage of each activity
         self.scn_count = None  # number of scenarios
         self.sample_size = None  # sample size
-        self.df = self.read_data(test_num)
+        self.df = self.read_data()
         self.p_scn = None
+        self.p_sample = None
         self.gamma = 0.01
         self.w = None
 
-    def read_data(self, test_num):
-        file_name = 'J30' + str(test_num[0]) + '_' + str(test_num[1]) + '.RCP'
+    def read_data(self):
+        file_name = 'J30' + str(self.test_num[0]) + '_' + str(self.test_num[1]) + '.RCP'
         file = './data/A30/j30rcp/' + file_name
         columns = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
         df = pd.read_csv(file, delim_whitespace=True, engine='python', names=columns)
@@ -41,19 +43,23 @@ class Data:
         self.big_r = self.available_resources.max()
         return df
 
-    def gen_scn(self, scn_count, sample_size):
+    def gen_scn(self, sample_size, scn_count):
         self.scn_count = scn_count
         self.sample_size = sample_size
         self.scenarios = np.array(range(self.scn_count))
         self.samples = np.array(range(self.sample_size))
-        np.random.seed(5000)
-        rnd_list = np.random.rand(32)
-        duration_scn = np.zeros(shape=(32, self.scn_count))
-        for scn in self.scenarios:
-            for act in self.activities:
-                if np.random.rand() >= 0.5:
-                    duration_scn[act, scn] = self.duration[act] * (1 + 5 / 13 * rnd_list[act])
-                else:
-                    duration_scn[act, scn] = self.duration[act] * (1 - 5 / 13 * rnd_list[act])
-        self.p_scn = dict(zip(self.activities, duration_scn))
+        np.random.seed(5000 + self.test_num[0] * 100 + self.test_num[1])
+        dur_scn = np.zeros(shape=(32, self.scn_count))
+        dur_sample = np.zeros(shape=(32, self.sample_size))
+
+        #  based on our data, a good guess for the distribution of activities...
+        #  ...is Weibull distribution with coefficient of variation 0.22
+        for act in self.activities:
+            for scn in self.scenarios:
+                dur_scn[act, scn] = np.random.weibull(1.5) * 0.36 * self.duration[act] + 0.675 * self.duration[act]
+            for scn in self.samples:
+                dur_sample[act, scn] = np.random.weibull(1.5) * 0.36 * self.duration[act] + 0.675 * self.duration[act]
+
+        self.p_scn = dict(zip(self.activities, dur_scn))
+        self.p_sample = dict(zip(self.activities, dur_sample))
         self.w = [1 * (np.random.rand() > 0.75) for _ in self.activities]
