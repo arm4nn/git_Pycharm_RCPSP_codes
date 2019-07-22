@@ -37,8 +37,8 @@ class Solver:
         self.add_const_6()
         self.add_const_7()
         self.add_obj()
-        self.grb.setParam('TimeLimit', 30)
-        # self.grb.setParam('OutputFlag', 0)
+        self.grb.setParam('TimeLimit', 60)
+        self.grb.setParam('OutputFlag', 0)
         self.grb.update()
         self.grb.optimize()
         if self.grb.status == 2:
@@ -53,7 +53,7 @@ class Solver:
             else:
                 raise Exception("len(self.x) != 1024")
         else:
-            print("problem {} is not solved optimally.".format(self.type))
+            print("******** problem {} is not solved optimally.".format(self.type))
 
     def add_vars(self):
         # one if activity i complete before activity j starts
