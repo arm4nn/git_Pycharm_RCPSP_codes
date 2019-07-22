@@ -11,11 +11,48 @@ class Solver:
         """
         self.data = Data(test_num)
         self.grb = Model('model: Solver')
+        if model_type not in {'fct', 'sfct', 'isfct'}:
+            raise Exception("model_name should be in {'fct', 'sfct', 'isfct'}")
         self.type = model_type
         self.x = None
         self.z = None
         self.f = None
         self.d = None
+        self.obj = None
+        self.det_x = np.zeros(1024).reshape(32, 32)
+        self.time = None
+        self.status = False
+
+        self.solve()
+
+    def solve(self):
+        self.add_vars()
+        self.add_const_1()
+        self.add_const_2a()
+        self.add_const_2b()
+        self.add_const_3()
+        self.add_const_4()
+        self.add_const_5()
+        self.add_const_6()
+        self.add_const_7()
+        self.add_obj()
+        self.grb.setParam('TimeLimit', 5)
+        self.grb.setParam('OutputFlag', 0)
+        self.grb.update()
+        self.grb.optimize()
+        if self.grb.status == 2:
+            self.status = True
+            if len(self.x) == 1024:
+                for i in range(32):
+                    for j in range(32):
+                        self.det_x[i, j] = round(self.x[i, j].X)
+                        self.obj = self.grb.ObjVal
+                        self.time = self.grb.Runtime
+
+            else:
+                raise Exception("len(self.x) != 1024")
+        else:
+            print("problem {} is not solved optimally.".format(self.type))
 
     def add_vars(self):
         # one if activity i complete before activity j starts
