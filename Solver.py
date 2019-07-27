@@ -4,12 +4,12 @@ from Data import Data
 
 
 class Solver:
-    def __init__(self, test_num=(1,1), model_type='fct', sample_size=1, scn_count=1):
+    def __init__(self, test_num=(1,1), model_type='fct', sample_size=20, scn_count=100, iteration=0):
         """
         :param test_num: (<1:48>,<1:10>)
         :param model_type: 'fct', 'sfct', or 'isfct'
         """
-        self.data = Data(test_num)
+        self.data = Data(test_num, iteration)
         self.data.gen_scn(sample_size, scn_count)
         self.grb = Model('model: Solver')
         if model_type not in {'fct', 'sfct', 'isfct'}:
@@ -22,6 +22,7 @@ class Solver:
         self.obj = None
         self.det_x = np.zeros(1024).reshape(32, 32)
         self.time = None
+        self.gap = None
         self.status = False
 
         self.solve()
@@ -49,6 +50,7 @@ class Solver:
                         self.det_x[i, j] = round(self.x[i, j].X)
                         self.obj = self.grb.ObjVal
                         self.time = self.grb.Runtime
+                        self.gap = self.grb.MIPGap
 
             else:
                 raise Exception("len(self.x) != 1024")
