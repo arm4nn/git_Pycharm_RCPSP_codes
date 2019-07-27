@@ -3,7 +3,7 @@ import pandas as pd
 
 
 class Data:
-    def __init__(self, test_num, iteration):
+    def __init__(self, test_num, iteration=None):
         """
         :param test_num: (<1:48>,<1:10>)
         """
@@ -49,7 +49,10 @@ class Data:
         self.sample_size = sample_size
         self.scenarios = np.array(range(self.scn_count))
         self.samples = np.array(range(self.sample_size))
-        np.random.seed(5000 + self.test_num[0] * 10000 + self.test_num[1] * 100 + self.iteration)
+        if self.iteration is None:
+            np.random.seed(5000 + self.test_num[0] * 10000 + self.test_num[1] * 100 + 1000000)
+        else:
+            np.random.seed(5000 + self.test_num[0] * 10000 + self.test_num[1] * 100 + self.iteration)
         dur_scn = np.zeros(shape=(32, self.scn_count))
         dur_sample = np.zeros(shape=(32, self.sample_size))
 

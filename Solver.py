@@ -44,14 +44,13 @@ class Solver:
         self.grb.optimize()
         if self.grb.status == 2:
             self.status = True
+            self.obj = self.grb.ObjVal
+            self.time = self.grb.Runtime
+            self.gap = self.grb.MIPGap
             if len(self.x) == 1024:
                 for i in range(32):
                     for j in range(32):
                         self.det_x[i, j] = round(self.x[i, j].X)
-                        self.obj = self.grb.ObjVal
-                        self.time = self.grb.Runtime
-                        self.gap = self.grb.MIPGap
-
             else:
                 raise Exception("len(self.x) != 1024")
         else:

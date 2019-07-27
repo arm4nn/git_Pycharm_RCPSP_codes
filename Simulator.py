@@ -4,18 +4,18 @@ from Data import Data
 
 
 class Simulator:
-    def __init__(self, test_num=(1,1), model_type='fct', sample_size=20, scn_count=100, iteration=0):
+    def __init__(self, test_num=(1, 1), model_type='fct', sample_size=20, scn_count=100, file=None):
         """
         :param test_num: (<1:48>,<1:10>)
         :param model_type: 'fct', 'sfct', or 'isfct'
         """
-        self.data = Data(test_num, iteration)
+        self.data = Data(test_num)
         self.data.gen_scn(sample_size, scn_count)
-        self.grb = Model('model: Solver')
+        self.grb = Model('model: Simulator')
         if model_type not in {'fct', 'sfct', 'isfct'}:
             raise Exception("model_name should be in {'fct', 'sfct', 'isfct'}")
         self.type = model_type
-        self.x = None
+        self.x = np.loadtxt(file).astype(int)
         self.z = None
         self.f = None
         self.d = None
@@ -29,7 +29,6 @@ class Simulator:
 
     def solve(self):
         self.add_vars()
-        self.add_const_1()
         self.add_const_2a()
         self.add_const_2b()
         self.add_const_3()
@@ -44,22 +43,12 @@ class Simulator:
         self.grb.optimize()
         if self.grb.status == 2:
             self.status = True
-            if len(self.x) == 1024:
-                for i in range(32):
-                    for j in range(32):
-                        self.det_x[i, j] = round(self.x[i, j].X)
-                        self.obj = self.grb.ObjVal
-                        self.time = self.grb.Runtime
-                        self.gap = self.grb.MIPGap
-
-            else:
-                raise Exception("len(self.x) != 1024")
+            self.obj = self.grb.ObjVal
+            self.time = self.grb.Runtime
         else:
             print("******** problem {} is not solved optimally.".format(self.type))
 
     def add_vars(self):
-        # one if activity i complete before activity j starts
-        self.x = self.grb.addVars(self.data.activities, self.data.activities, lb=0.0, ub=1.0, vtype='B', name="X")
         # amount of resource r that will pass to activity j after the completion of activity i
         self.f = self.grb.addVars(self.data.activities, self.data.activities, self.data.resources, lb=0.0,
                                   ub=self.data.big_r, vtype='C', name="F")
@@ -68,7 +57,7 @@ class Simulator:
             self.z = self.grb.addVars(self.data.activities, lb=0.0, ub=self.data.big_t, vtype='C', name="Z")
         elif self.type in {'sfct', 'isfct'}:
             # start time of activity i in scenario s
-            self.z = self.grb.addVars(self.data.activities, self.data.samples, lb=0.0, ub=self.data.big_t, vtype='C',
+            self.z = self.grb.addVars(self.data.activities, self.data.scenarios, lb=0.0, ub=self.data.big_t, vtype='C',
                                       name="Z")
             if self.type in {'isfct'}:
                 # delivery date of procured materials/equipment for activity i
@@ -76,18 +65,11 @@ class Simulator:
         else:
             raise Exception("model_name should be in {'fct', 'sfct', 'isfct'}")
 
-    def add_const_1(self):
-        self.grb.addConstrs(
-            (self.x[i, j] == 1
-             for i in self.data.activities[:-1]
-             for j in self.data.activities[self.data.successors[i][self.data.successors[i] > 0].astype(np.int) - 1]),
-            name="Network Relations")
-
     def add_const_2a(self):
         if self.type in {'sfct', 'isfct'}:
             self.grb.addConstrs(
-                (self.z[j, s] - self.z[i, s] >= self.data.p_sample[i][s] - self.data.big_t * (1 - self.x[i, j])
-                 for s in self.data.samples
+                (self.z[j, s] - self.z[i, s] >= self.data.p_scn[i][s] - self.data.big_t * (1 - self.x[i, j])
+                 for s in self.data.scenarios
                  for i in self.data.activities[:-1]
                  for j in self.data.activities[1:]),
                 name="NetworkStartTimeRelations")
@@ -104,7 +86,7 @@ class Simulator:
         if self.type in {'isfct'}:
             self.grb.addConstrs(
                 (self.z[i, s] >= self.d[i]
-                 for s in self.data.samples
+                 for s in self.data.scenarios
                  for i in self.data.activities),
                 name="NetworkStartTimeAndOrderRelations")
 
@@ -148,13 +130,14 @@ class Simulator:
         if self.type in {'fct'}:
             obj = (self.z[self.data.activities[-1]])
         elif self.type in {'sfct'}:
-            obj = (quicksum(self.z[self.data.activities[-1], s] for s in self.data.samples) / self.data.sample_size)
+            obj = (quicksum(self.z[self.data.activities[-1], s] for s in self.data.scenarios) / self.data.scn_count)
         elif self.type in {'isfct'}:
-            tmp_1 = quicksum(self.z[self.data.activities[-1], s] for s in self.data.samples) / self.data.sample_size
+            tmp_1 = quicksum(self.z[self.data.activities[-1], s] for s in self.data.scenarios) / self.data.scn_count
             tmp_2 = quicksum(self.data.w[i] * (self.z[i, s] - self.d[i]) for i in self.data.activities for s in
-                             self.data.samples) / self.data.sample_size
+                             self.data.scenarios) / self.data.scn_count
             obj = tmp_1 + self.data.gamma * tmp_2
         else:
             raise Exception("model_name should be in {'fct', 'sfct', 'isfct'}")
         self.grb.setObjective(obj, GRB.MINIMIZE)
+
 
