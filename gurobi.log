@@ -59291,3 +59291,1138 @@ Changed value of parameter TimeLimit to 60.0
    Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
 Changed value of parameter TimeLimit to 60.0
    Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 10:32:33 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 10:36:14 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 1926100 rows, 68096 columns and 3735780 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-04, 5e-04]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 9455 rows and 1392052 columns (presolve time = 5s) ...
+Presolve removed 9455 rows and 1392052 columns
+Presolve time: 6.01s
+Presolved: 58641 rows, 602144 columns, 1203698 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 22
+ AA' NZ     : 6.003e+05
+ Factor NZ  : 9.072e+05 (roughly 270 MBytes of memory)
+ Factor Ops : 1.986e+07 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.71856898e+04  5.82822349e+01  2.70e+00 3.60e+01  1.15e+01     6s
+   1  -2.78091744e+05  1.57946833e+02  3.81e-01 1.93e+01  2.45e+00     7s
+   2  -1.56493818e+05  1.49783052e+02  2.53e-08 5.87e-01  2.64e-01     7s
+   3  -2.17520641e+04  1.49665898e+02  3.50e-09 6.98e-02  3.61e-02     7s
+   4  -5.05406880e+02  1.49642417e+02  2.67e-10 7.89e-03  1.08e-03     7s
+   5  -3.88831005e+01  1.49323857e+02  6.31e-11 1.39e-04  3.09e-04     7s
+   6  -2.21141564e+01  1.42918006e+02  5.57e-11 4.49e-05  2.71e-04     7s
+   7   2.47422961e-01  1.24878369e+02  4.41e-11 1.33e-05  2.05e-04     7s
+   8   2.95137574e+00  9.97028537e+01  2.40e-11 7.20e-06  1.59e-04     7s
+   9   2.65512874e+01  7.23465071e+01  2.70e-12 3.17e-06  7.52e-05     8s
+  10   4.61450227e+01  6.09808853e+01  2.32e-12 1.43e-06  2.44e-05     8s
+  11   5.34709333e+01  5.82461259e+01  4.91e-12 5.71e-07  7.84e-06     8s
+  12   5.62046969e+01  5.68477530e+01  2.68e-11 1.12e-07  1.06e-06     8s
+  13   5.64952830e+01  5.66196615e+01  4.74e-12 5.16e-08  2.04e-07     8s
+  14   5.65230708e+01  5.65333386e+01  1.13e-10 1.55e-08  1.69e-08     8s
+  15   5.65251074e+01  5.65263239e+01  4.51e-11 3.05e-09  2.00e-09     8s
+  16   5.65251229e+01  5.65255002e+01  8.11e-10 8.24e-10  6.20e-10     9s
+  17   5.65251973e+01  5.65252449e+01  2.32e-10 1.34e-10  7.83e-11     9s
+  18   5.65252070e+01  5.65252071e+01  1.09e-12 1.27e-12  1.66e-13     9s
+
+Barrier solved model in 18 iterations and 8.76 seconds
+Optimal objective 5.65252070e+01
+
+Crossover log...
+
+       0 DPushes remaining with DInf 8.5904617e-12                 9s
+
+       3 PPushes remaining with PInf 0.0000000e+00                 9s
+       0 PPushes remaining with PInf 0.0000000e+00                 9s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 8.5904617e-12      9s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36526    5.6525207e+01   0.000000e+00   0.000000e+00     11s
+
+Solved with dual simplex
+Solved in 102388 iterations and 11.40 seconds
+Optimal objective  5.652520704e+01
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 1926100 rows, 68096 columns and 3735780 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-04, 5e-04]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 9438 rows and 1400044 columns (presolve time = 5s) ...
+Presolve removed 9438 rows and 1400045 columns
+Presolve time: 6.36s
+Presolved: 58658 rows, 594151 columns, 1187818 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 22
+ AA' NZ     : 6.027e+05
+ Factor NZ  : 9.110e+05 (roughly 270 MBytes of memory)
+ Factor Ops : 2.029e+07 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.49255150e+05  5.61485620e+01  2.70e+00 1.81e+01  8.30e+00     7s
+   1  -1.27715285e+05  1.48698466e+02  3.56e-01 6.11e+00  1.55e+00     7s
+   2  -8.37363848e+04  1.49386091e+02  4.51e-09 5.84e-01  1.44e-01     7s
+   3  -1.56034111e+04  1.49408788e+02  1.26e-09 8.81e-02  2.63e-02     7s
+   4  -6.80486059e+02  1.49402868e+02  2.70e-11 8.15e-03  1.38e-03     7s
+   5  -6.56325905e+01  1.48950681e+02  1.82e-11 5.57e-05  3.57e-04     7s
+   6  -3.81717263e+01  1.40876007e+02  1.52e-11 2.09e-05  2.98e-04     7s
+   7  -9.62801563e+00  1.28418525e+02  1.18e-11 7.85e-06  2.30e-04     8s
+   8   1.60894832e+01  8.90035757e+01  6.56e-12 1.84e-06  1.21e-04     8s
+   9   3.55276031e+01  6.86033978e+01  1.33e-12 1.06e-06  5.51e-05     8s
+  10   4.68736916e+01  6.00713952e+01  9.51e-13 5.14e-07  2.20e-05     8s
+  11   5.35125887e+01  5.81134065e+01  6.42e-12 3.38e-07  7.66e-06     8s
+  12   5.63613088e+01  5.69080763e+01  2.13e-11 1.65e-07  9.10e-07     8s
+  13   5.65782714e+01  5.66689182e+01  1.21e-12 5.95e-08  1.51e-07     8s
+  14   5.65972971e+01  5.66028723e+01  7.22e-11 1.14e-08  9.28e-09     8s
+  15   5.65984408e+01  5.65989797e+01  4.06e-10 1.67e-09  8.97e-10     8s
+  16   5.65984980e+01  5.65985086e+01  3.26e-10 4.17e-11  1.78e-11     9s
+  17   5.65985001e+01  5.65985002e+01  1.23e-12 2.03e-12  1.90e-13     9s
+
+Barrier solved model in 17 iterations and 8.65 seconds
+Optimal objective 5.65985001e+01
+
+Crossover log...
+
+       0 DPushes remaining with DInf 7.8301809e-12                 9s
+
+       3 PPushes remaining with PInf 0.0000000e+00                 9s
+       0 PPushes remaining with PInf 0.0000000e+00                 9s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 7.8301809e-12      9s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36577    5.6598500e+01   0.000000e+00   0.000000e+00     11s
+
+Solved with dual simplex
+Solved in 105305 iterations and 10.91 seconds
+Optimal objective  5.659850021e+01
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 10:38:37 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 1926100 rows, 68096 columns and 3735780 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-04, 5e-04]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 9455 rows and 1392052 columns (presolve time = 5s) ...
+Presolve removed 9455 rows and 1392052 columns
+Presolve time: 5.99s
+Presolved: 58641 rows, 602144 columns, 1203698 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 22
+ AA' NZ     : 6.003e+05
+ Factor NZ  : 9.072e+05 (roughly 270 MBytes of memory)
+ Factor Ops : 1.986e+07 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.71856898e+04  5.82822349e+01  2.70e+00 3.60e+01  1.15e+01     6s
+   1  -2.78091744e+05  1.57946833e+02  3.81e-01 1.93e+01  2.45e+00     7s
+   2  -1.56493818e+05  1.49783052e+02  2.53e-08 5.87e-01  2.64e-01     7s
+   3  -2.17520641e+04  1.49665898e+02  3.50e-09 6.98e-02  3.61e-02     7s
+   4  -5.05406880e+02  1.49642417e+02  2.67e-10 7.89e-03  1.08e-03     7s
+   5  -3.88831005e+01  1.49323857e+02  6.31e-11 1.39e-04  3.09e-04     7s
+   6  -2.21141564e+01  1.42918006e+02  5.57e-11 4.49e-05  2.71e-04     7s
+   7   2.47422961e-01  1.24878369e+02  4.41e-11 1.33e-05  2.05e-04     7s
+   8   2.95137574e+00  9.97028537e+01  2.40e-11 7.20e-06  1.59e-04     7s
+   9   2.65512874e+01  7.23465071e+01  2.70e-12 3.17e-06  7.52e-05     7s
+  10   4.61450227e+01  6.09808853e+01  2.32e-12 1.43e-06  2.44e-05     8s
+  11   5.34709333e+01  5.82461259e+01  4.91e-12 5.71e-07  7.84e-06     8s
+  12   5.62046969e+01  5.68477530e+01  2.68e-11 1.12e-07  1.06e-06     8s
+  13   5.64952830e+01  5.66196615e+01  4.74e-12 5.16e-08  2.04e-07     8s
+  14   5.65230708e+01  5.65333386e+01  1.13e-10 1.55e-08  1.69e-08     8s
+  15   5.65251074e+01  5.65263239e+01  4.51e-11 3.05e-09  2.00e-09     8s
+  16   5.65251229e+01  5.65255002e+01  8.11e-10 8.24e-10  6.20e-10     8s
+  17   5.65251973e+01  5.65252449e+01  2.32e-10 1.34e-10  7.83e-11     8s
+  18   5.65252070e+01  5.65252071e+01  1.09e-12 1.27e-12  1.66e-13     8s
+
+Barrier solved model in 18 iterations and 8.40 seconds
+Optimal objective 5.65252070e+01
+
+Crossover log...
+
+       0 DPushes remaining with DInf 8.5904617e-12                 9s
+
+       3 PPushes remaining with PInf 0.0000000e+00                 9s
+       0 PPushes remaining with PInf 0.0000000e+00                 9s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 8.5904617e-12      9s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36526    5.6525207e+01   0.000000e+00   0.000000e+00     11s
+
+Solved with dual simplex
+Solved in 102388 iterations and 11.05 seconds
+Optimal objective  5.652520704e+01
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 1926100 rows, 68096 columns and 3735780 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-04, 5e-04]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 9400 rows and 1326040 columns (presolve time = 5s) ...
+Presolve removed 9438 rows and 1400045 columns
+Presolve time: 7.77s
+Presolved: 58658 rows, 594151 columns, 1187818 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 22
+ AA' NZ     : 6.027e+05
+ Factor NZ  : 9.110e+05 (roughly 270 MBytes of memory)
+ Factor Ops : 2.029e+07 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.49255150e+05  5.61485620e+01  2.70e+00 1.81e+01  8.30e+00     8s
+   1  -1.27715285e+05  1.48698466e+02  3.56e-01 6.11e+00  1.55e+00     8s
+   2  -8.37363848e+04  1.49386091e+02  4.51e-09 5.84e-01  1.44e-01     9s
+   3  -1.56034111e+04  1.49408788e+02  1.26e-09 8.81e-02  2.63e-02     9s
+   4  -6.80486059e+02  1.49402868e+02  2.70e-11 8.15e-03  1.38e-03     9s
+   5  -6.56325905e+01  1.48950681e+02  1.82e-11 5.57e-05  3.57e-04     9s
+   6  -3.81717263e+01  1.40876007e+02  1.52e-11 2.09e-05  2.98e-04     9s
+   7  -9.62801563e+00  1.28418525e+02  1.18e-11 7.85e-06  2.30e-04     9s
+   8   1.60894832e+01  8.90035757e+01  6.56e-12 1.84e-06  1.21e-04     9s
+   9   3.55276031e+01  6.86033978e+01  1.33e-12 1.06e-06  5.51e-05     9s
+  10   4.68736916e+01  6.00713952e+01  9.51e-13 5.14e-07  2.20e-05     9s
+  11   5.35125887e+01  5.81134065e+01  6.42e-12 3.38e-07  7.66e-06    10s
+  12   5.63613088e+01  5.69080763e+01  2.13e-11 1.65e-07  9.10e-07    10s
+  13   5.65782714e+01  5.66689182e+01  1.21e-12 5.95e-08  1.51e-07    10s
+  14   5.65972971e+01  5.66028723e+01  7.22e-11 1.14e-08  9.28e-09    10s
+  15   5.65984408e+01  5.65989797e+01  4.06e-10 1.67e-09  8.97e-10    10s
+  16   5.65984980e+01  5.65985086e+01  3.26e-10 4.17e-11  1.78e-11    10s
+  17   5.65985001e+01  5.65985002e+01  1.23e-12 2.03e-12  1.90e-13    10s
+
+Barrier solved model in 17 iterations and 10.45 seconds
+Optimal objective 5.65985001e+01
+
+Crossover log...
+
+   40672 DPushes remaining with DInf 0.0000000e+00                11s
+       0 DPushes remaining with DInf 7.8301809e-12                11s
+
+       3 PPushes remaining with PInf 0.0000000e+00                11s
+       0 PPushes remaining with PInf 0.0000000e+00                11s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 7.8301809e-12     11s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36577    5.6598500e+01   0.000000e+00   0.000000e+00     13s
+
+Solved with dual simplex
+Solved in 105305 iterations and 12.94 seconds
+Optimal objective  5.659850021e+01
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 1926100 rows, 68096 columns and 3735780 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-04, 5e-04]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 9503 rows and 1496041 columns (presolve time = 5s) ...
+Presolve removed 9503 rows and 1496041 columns
+Presolve time: 6.44s
+Presolved: 58593 rows, 498155 columns, 995783 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 16
+ AA' NZ     : 5.072e+05
+ Factor NZ  : 9.061e+05 (roughly 230 MBytes of memory)
+ Factor Ops : 1.986e+07 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   9.50348015e+04  5.71247736e+01  2.60e+00 2.06e+01  8.89e+00     7s
+   1  -1.52924137e+05  1.49250794e+02  3.40e-01 7.33e+00  1.75e+00     7s
+   2  -8.10765652e+04  1.49509531e+02  1.13e-08 7.25e-01  1.67e-01     7s
+   3  -1.08373534e+04  1.49524461e+02  4.21e-10 9.64e-02  2.19e-02     7s
+   4  -2.90584076e+02  1.49507288e+02  1.16e-10 1.27e-02  8.74e-04     7s
+   5  -4.48699785e+01  1.48547279e+02  5.38e-11 8.93e-04  3.83e-04     7s
+   6  -2.07744478e+01  1.36480399e+02  4.33e-11 3.51e-04  3.12e-04     7s
+   7   4.09729461e+00  1.12897415e+02  3.22e-11 8.24e-05  2.16e-04     8s
+   8   1.84905683e+01  7.89581724e+01  3.25e-13 3.14e-05  1.20e-04     8s
+   9   4.07546772e+01  6.41942857e+01  1.12e-11 1.45e-05  4.64e-05     8s
+  10   5.09956025e+01  5.85878202e+01  3.33e-12 3.65e-06  1.50e-05     8s
+  11   5.47042913e+01  5.73047027e+01  8.41e-12 1.28e-06  5.15e-06     8s
+  12   5.63094186e+01  5.66062868e+01  1.19e-12 2.09e-07  5.88e-07     8s
+  13   5.64514176e+01  5.64914100e+01  2.20e-12 4.09e-08  7.93e-08     8s
+  14   5.64614534e+01  5.64640892e+01  3.05e-12 7.48e-09  5.22e-09     8s
+  15   5.64618583e+01  5.64619179e+01  7.00e-12 4.69e-10  1.18e-10     8s
+  16   5.64618799e+01  5.64618802e+01  1.52e-12 4.67e-12  6.55e-13     8s
+
+Barrier solved model in 16 iterations and 8.45 seconds
+Optimal objective 5.64618799e+01
+
+Crossover log...
+
+       0 DPushes remaining with DInf 8.2955864e-12                 9s
+
+       5 PPushes remaining with PInf 0.0000000e+00                 9s
+       0 PPushes remaining with PInf 0.0000000e+00                 9s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 8.2955864e-12      9s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36472    5.6461880e+01   0.000000e+00   0.000000e+00     11s
+
+Solved with dual simplex
+Solved in 98632 iterations and 10.90 seconds
+Optimal objective  5.646188012e+01
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 1926100 rows, 68096 columns and 3735780 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-04, 5e-04]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 9552 rows and 1498041 columns
+Presolve time: 5.57s
+Presolved: 58544 rows, 496155 columns, 991485 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 20
+ AA' NZ     : 4.984e+05
+ Factor NZ  : 8.961e+05 (roughly 230 MBytes of memory)
+ Factor Ops : 1.868e+07 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   8.60465237e+04  5.98901039e+01  2.20e+00 1.92e+01  8.62e+00     6s
+   1  -1.92047656e+05  1.49698309e+02  2.93e-01 4.09e+00  1.76e+00     6s
+   2  -7.55593984e+04  1.49775705e+02  3.75e-16 8.70e-01  1.57e-01     6s
+   3  -9.88745812e+03  1.49773890e+02  9.76e-17 9.32e-02  2.01e-02     6s
+   4  -3.96511763e+02  1.49762506e+02  1.28e-17 1.00e-02  1.09e-03     6s
+   5  -6.34646271e+01  1.49388536e+02  4.88e-18 1.02e-04  4.23e-04     7s
+   6  -3.54830658e+01  1.43101516e+02  4.34e-18 3.90e-05  3.55e-04     7s
+   7  -4.86702832e+00  1.31923592e+02  4.27e-17 1.35e-05  2.72e-04     7s
+   8   6.48163443e+00  8.99561335e+01  3.48e-16 2.36e-06  1.66e-04     7s
+   9   3.61595140e+01  6.89900825e+01  4.99e-16 1.33e-06  6.53e-05     7s
+  10   4.70421218e+01  5.95339561e+01  7.39e-17 5.03e-07  2.49e-05     7s
+  11   5.42541137e+01  5.79138835e+01  5.77e-17 3.00e-07  7.28e-06     7s
+  12   5.61961271e+01  5.67096636e+01  4.56e-17 1.48e-07  1.02e-06     7s
+  13   5.64281330e+01  5.65154029e+01  7.60e-17 8.02e-08  1.74e-07     7s
+  14   5.64474740e+01  5.64524209e+01  2.46e-10 1.29e-08  9.84e-09     7s
+  15   5.64484754e+01  5.64485601e+01  6.13e-11 6.45e-10  1.69e-10     7s
+  16   5.64485094e+01  5.64485099e+01  3.26e-12 7.17e-12  9.41e-13     8s
+
+Barrier solved model in 16 iterations and 7.53 seconds
+Optimal objective 5.64485094e+01
+
+Crossover log...
+
+       0 DPushes remaining with DInf 7.4464879e-12                 8s
+
+       5 PPushes remaining with PInf 0.0000000e+00                 8s
+       0 PPushes remaining with PInf 0.0000000e+00                 8s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 7.4464879e-12      8s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36500    5.6448510e+01   0.000000e+00   0.000000e+00     10s
+
+Solved with dual simplex
+Solved in 103318 iterations and 10.13 seconds
+Optimal objective  5.644850978e+01
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 1926100 rows, 68096 columns and 3735780 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-04, 5e-04]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 9555 rows and 1468052 columns (presolve time = 5s) ...
+Presolve removed 9555 rows and 1468052 columns
+Presolve time: 6.07s
+Presolved: 58541 rows, 526144 columns, 1051515 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 16
+ AA' NZ     : 5.287e+05
+ Factor NZ  : 8.985e+05 (roughly 240 MBytes of memory)
+ Factor Ops : 1.904e+07 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.20452183e+05  5.74548927e+01  2.70e+00 1.98e+01  8.71e+00     6s
+   1  -1.45953300e+05  1.48985462e+02  3.73e-01 6.70e+00  1.76e+00     7s
+   2  -8.63734359e+04  1.49583611e+02  4.48e-16 8.00e-01  1.69e-01     7s
+   3  -1.67208101e+04  1.49603643e+02  2.22e-16 1.15e-01  3.19e-02     7s
+   4  -8.20043509e+02  1.49599096e+02  2.50e-16 1.06e-02  1.82e-03     7s
+   5  -5.94940428e+01  1.49369438e+02  6.18e-18 3.23e-04  3.92e-04     7s
+   6  -3.65668248e+01  1.42745510e+02  5.42e-18 1.33e-04  3.37e-04     7s
+   7  -1.53468754e+01  1.31895561e+02  5.50e-17 5.07e-05  2.76e-04     7s
+   8   1.83692862e+01  9.39537529e+01  1.25e-16 5.81e-06  1.42e-04     7s
+   9   3.52361525e+01  6.98902185e+01  2.39e-16 2.57e-06  6.51e-05     7s
+  10   4.61537935e+01  6.03481046e+01  1.01e-16 1.09e-06  2.66e-05     7s
+  11   5.25314704e+01  5.81121453e+01  5.89e-17 4.36e-07  1.05e-05     7s
+  12   5.59504162e+01  5.68047253e+01  7.29e-17 1.09e-07  1.60e-06     8s
+  13   5.63972358e+01  5.65230913e+01  8.27e-17 5.35e-08  2.36e-07     8s
+  14   5.64372776e+01  5.64447402e+01  8.72e-17 2.83e-08  1.40e-08     8s
+  15   5.64393568e+01  5.64401291e+01  6.36e-17 5.01e-09  1.45e-09     8s
+  16   5.64394212e+01  5.64394420e+01  4.92e-11 1.58e-10  3.89e-11     8s
+  17   5.64394235e+01  5.64394236e+01  1.08e-12 3.01e-12  1.88e-13     8s
+
+Barrier solved model in 17 iterations and 8.11 seconds
+Optimal objective 5.64394235e+01
+
+Crossover log...
+
+       0 DPushes remaining with DInf 7.4074080e-12                 8s
+
+       3 PPushes remaining with PInf 0.0000000e+00                 8s
+       0 PPushes remaining with PInf 0.0000000e+00                 9s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 7.4074080e-12      9s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36453    5.6439424e+01   0.000000e+00   0.000000e+00     10s
+
+Solved with dual simplex
+Solved in 100163 iterations and 10.35 seconds
+Optimal objective  5.643942358e+01
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 1926100 rows, 68096 columns and 3735780 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-04, 5e-04]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 9401 rows and 1408042 columns (presolve time = 5s) ...
+Presolve removed 9401 rows and 1408042 columns
+Presolve time: 6.57s
+Presolved: 58695 rows, 586154 columns, 1171848 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 25
+ AA' NZ     : 5.927e+05
+ Factor NZ  : 9.147e+05 (roughly 270 MBytes of memory)
+ Factor Ops : 2.079e+07 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.42735291e+05  5.61309499e+01  2.70e+00 1.97e+01  8.63e+00     7s
+   1  -1.54672970e+05  1.48928364e+02  4.00e-01 5.69e+00  1.74e+00     7s
+   2  -8.64939748e+04  1.49544202e+02  2.91e-09 6.60e-01  1.51e-01     7s
+   3  -1.38205417e+04  1.49566399e+02  4.66e-10 9.99e-02  2.37e-02     8s
+   4  -5.71088946e+02  1.49560715e+02  5.22e-11 8.57e-03  1.22e-03     8s
+   5  -6.21578718e+01  1.49150141e+02  8.74e-12 1.31e-04  3.56e-04     8s
+   6  -3.68264526e+01  1.40896346e+02  6.95e-12 5.20e-05  3.00e-04     8s
+   7  -8.21825918e+00  1.26817568e+02  5.64e-12 1.59e-05  2.28e-04     8s
+   8   6.68897928e+00  8.58286270e+01  2.82e-12 3.43e-06  1.33e-04     8s
+   9   3.57543149e+01  6.84411283e+01  7.07e-13 1.31e-06  5.51e-05     8s
+  10   4.67414710e+01  5.98365339e+01  2.44e-13 5.20e-07  2.21e-05     8s
+  11   5.33718575e+01  5.80808444e+01  1.57e-12 3.05e-07  7.94e-06     8s
+  12   5.60754612e+01  5.68805408e+01  5.00e-12 1.80e-07  1.36e-06     8s
+  13   5.64349788e+01  5.65684322e+01  3.15e-11 8.77e-08  2.25e-07     9s
+  14   5.64631263e+01  5.64730776e+01  5.26e-11 9.91e-09  1.68e-08     9s
+  15   5.64648256e+01  5.64663285e+01  9.36e-10 2.16e-09  2.54e-09     9s
+  16   5.64649004e+01  5.64649721e+01  5.35e-10 1.63e-10  1.21e-10     9s
+  17   5.64649203e+01  5.64649207e+01  3.99e-12 1.49e-12  6.50e-13     9s
+
+Barrier solved model in 17 iterations and 9.16 seconds
+Optimal objective 5.64649203e+01
+
+Crossover log...
+
+       0 DPushes remaining with DInf 6.8833828e-12                10s
+
+       2 PPushes remaining with PInf 0.0000000e+00                10s
+       0 PPushes remaining with PInf 0.0000000e+00                10s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 6.8833828e-12     10s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36639    5.6464921e+01   0.000000e+00   5.000000e-06     10s
+   36639    5.6464921e+01   0.000000e+00   0.000000e+00     12s
+
+Solved with dual simplex
+Solved in 101339 iterations and 11.79 seconds
+Optimal objective  5.646492059e+01
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 10:44:37 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 1926100 rows, 68096 columns and 3735780 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-04, 5e-04]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 7602 rows and 1450055 columns
+Presolve time: 5.68s
+Presolved: 60494 rows, 544141 columns, 1087422 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 13
+ AA' NZ     : 5.441e+05
+ Factor NZ  : 9.547e+05 (roughly 250 MBytes of memory)
+ Factor Ops : 2.053e+07 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   2.49442790e+04  6.05334243e+01  2.70e+00 4.66e+01  1.30e+01     6s
+   1  -2.55928959e+05  1.53010732e+02  3.72e-01 3.55e+01  2.79e+00     6s
+   2  -1.76817702e+05  1.47409087e+02  5.13e-15 2.98e+00  3.65e-01     6s
+   3  -2.04349900e+04  1.47647535e+02  5.55e-16 1.84e-01  3.78e-02     7s
+   4  -1.77264062e+03  1.47619988e+02  2.48e-14 2.29e-02  3.49e-03     7s
+   5  -1.42398519e+01  1.47336255e+02  8.26e-15 6.14e-03  2.94e-04     7s
+   6   2.90154676e+00  1.35438682e+02  6.95e-15 2.52e-03  2.41e-04     7s
+   7   1.33039932e+01  1.09009171e+02  4.93e-15 1.31e-03  1.74e-04     7s
+   8   2.66348010e+01  7.69781292e+01  2.53e-15 5.93e-04  9.15e-05     7s
+   9   3.98152177e+01  6.49333129e+01  7.22e-16 3.17e-04  4.56e-05     7s
+  10   5.31811488e+01  6.03791437e+01  5.13e-16 9.22e-05  1.31e-05     7s
+  11   5.74153309e+01  5.90210824e+01  1.56e-14 3.33e-05  2.92e-06     7s
+  12   5.81654325e+01  5.83433906e+01  2.25e-13 4.24e-06  3.23e-07     7s
+  13   5.82356056e+01  5.82663920e+01  4.55e-14 1.07e-06  5.60e-08     7s
+  14   5.82393346e+01  5.82415029e+01  1.40e-12 6.14e-08  3.94e-09     8s
+  15   5.82397235e+01  5.82398863e+01  3.94e-13 4.55e-09  2.96e-10     8s
+  16   5.82397420e+01  5.82397442e+01  7.70e-13 4.90e-11  4.10e-12     8s
+  17   5.82397424e+01  5.82397424e+01  1.48e-12 5.68e-14  3.81e-14     8s
+
+Barrier solved model in 17 iterations and 7.84 seconds
+Optimal objective 5.82397424e+01
+
+Crossover log...
+
+       0 DPushes remaining with DInf 9.2281738e-12                 8s
+
+       3 PPushes remaining with PInf 0.0000000e+00                 8s
+       0 PPushes remaining with PInf 0.0000000e+00                 8s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 9.2281738e-12      8s
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36258    5.8239742e+01   0.000000e+00   0.000000e+00     10s
+
+Solved with dual simplex
+Solved in 100770 iterations and 10.94 seconds
+Optimal objective  5.823974243e+01
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 10:48:15 2019
+
+Academic license - for non-commercial use only
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 10:48:30 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 196300 rows, 10496 columns and 384180 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-03, 5e-03]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 4055 rows and 146452 columns
+Presolve time: 0.47s
+Presolved: 6441 rows, 60344 columns, 121898 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 22
+ AA' NZ     : 7.647e+04
+ Factor NZ  : 1.242e+05 (roughly 30 MBytes of memory)
+ Factor Ops : 4.462e+06 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   6.60503239e+03  5.82490580e+01  2.70e+00 3.44e+01  1.13e+01     1s
+   1  -2.71245025e+04  1.57911018e+02  3.80e-01 1.56e+01  2.42e+00     1s
+   2  -1.50493663e+04  1.49833250e+02  1.08e-09 5.89e-01  2.54e-01     1s
+   3  -2.31069991e+03  1.49706443e+02  2.94e-09 6.84e-02  4.02e-02     1s
+   4  -5.75228451e+01  1.49622162e+02  1.10e-10 7.23e-03  3.37e-03     1s
+   5  -3.98860823e+01  1.44434430e+02  9.58e-11 2.61e-03  3.00e-03     1s
+   6  -5.13624714e+00  1.29570681e+02  7.33e-11 4.52e-04  2.19e-03     1s
+   7   1.95435114e+01  1.16507138e+02  3.67e-11 3.31e-04  1.58e-03     1s
+   8   1.07507479e+01  7.55249185e+01  5.77e-12 1.41e-04  1.05e-03     1s
+   9   3.97627103e+01  6.18724611e+01  2.73e-11 6.79e-05  3.59e-04     1s
+  10   5.19140370e+01  5.80985333e+01  9.70e-13 2.10e-05  1.00e-04     1s
+  11   5.58660926e+01  5.64166021e+01  6.41e-12 1.24e-06  8.94e-06     1s
+  12   5.62427812e+01  5.62650451e+01  2.52e-13 7.08e-08  3.62e-07     1s
+  13   5.62526040e+01  5.62542332e+01  1.09e-13 1.22e-08  2.65e-08     1s
+  14   5.62527486e+01  5.62527579e+01  1.03e-11 3.54e-10  1.51e-10     1s
+  15   5.62527524e+01  5.62527524e+01  2.19e-15 5.68e-14  4.87e-16     1s
+
+Barrier solved model in 15 iterations and 0.63 seconds
+Optimal objective 5.62527524e+01
+
+Crossover log...
+
+       0 DPushes remaining with DInf 8.0113693e-13                 1s
+
+       3 PPushes remaining with PInf 0.0000000e+00                 1s
+       0 PPushes remaining with PInf 0.0000000e+00                 1s
+
+  Push phase complete: Pinf 0.0000000e+00, Dinf 8.0113693e-13      1s
+
+
+Solved with dual simplex
+Solved in 10410 iterations and 0.70 seconds
+Optimal objective  5.625275240e+01
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Optimize a model with 196300 rows, 10496 columns and 384180 nonzeros
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [5e-03, 5e-03]
+  Bounds range     [3e+01, 2e+02]
+  RHS range        [7e-01, 1e+02]
+
+Concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+
+Presolve removed 4038 rows and 147245 columns
+Presolve time: 0.55s
+Presolved: 6458 rows, 59551 columns, 120418 nonzeros
+
+Ordering time: 0.00s
+
+Barrier statistics:
+ Free vars  : 22
+ AA' NZ     : 8.073e+04
+ Factor NZ  : 1.280e+05 (roughly 30 MBytes of memory)
+ Factor Ops : 4.893e+06 (less than 1 second per iteration)
+ Threads    : 4
+
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   1.48004276e+04  5.61230865e+01  2.70e+00 1.78e+01  8.24e+00     1s
+   1  -1.25592062e+04  1.48955194e+02  3.55e-01 6.08e+00  1.55e+00     1s
+   2  -8.10546663e+03  1.49468479e+02  3.60e-09 5.89e-01  1.40e-01     1s
+   3  -1.40777298e+03  1.49469013e+02  2.33e-10 8.85e-02  2.58e-02     1s
+   4  -6.13025270e+01  1.49289828e+02  1.93e-10 7.99e-03  3.47e-03     1s
+   5  -4.15886713e+01  1.41612828e+02  1.67e-10 3.39e-03  3.02e-03     1s
+   6  -5.72086003e+00  1.30244665e+02  1.23e-10 1.41e-03  2.24e-03     1s
+   7   1.90026161e+01  8.46031269e+01  6.64e-11 2.04e-04  1.08e-03     1s
+   8   3.73810644e+01  6.53009244e+01  9.11e-12 8.74e-05  4.59e-04     1s
+   9   4.89219293e+01  5.88492437e+01  6.18e-13 2.59e-05  1.63e-04     1s
+  10   5.47961249e+01  5.72368238e+01  5.96e-14 8.08e-06  4.02e-05     1s
+  11   5.61739271e+01  5.64263381e+01  4.79e-12 9.63e-07  4.15e-06     1s
+  12   5.63080987e+01  5.63420627e+01  1.22e-12 2.33e-07  5.59e-07     1s
+  13   5.63139886e+01  5.63147973e+01  4.01e-12 5.65e-09  1.33e-08     1s
+  14   5.63141949e+01  5.63141990e+01  3.24e-12 3.94e-10  6.69e-11     1s
+
+Barrier performed 14 iterations in 0.70 seconds
+Barrier solve interrupted - model solved by another algorithm
+
+
+Solved with dual simplex
+Solved in 10715 iterations and 0.73 seconds
+Optimal objective  5.631419749e+01
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 10:55:16 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 11:11:24 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 11:12:40 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 13:12:52 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+
+Gurobi 8.1.1 (mac64, Python) logging started Sat Jul 27 13:14:29 2019
+
+Academic license - for non-commercial use only
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100
+Changed value of parameter TimeLimit to 60.0
+   Prev: 1e+100  Min: 0.0  Max: 1e+100  Default: 1e+100

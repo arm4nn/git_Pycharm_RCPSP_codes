@@ -21,9 +21,7 @@ tests = [(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), (1, 7), (1, 8), (1, 10)
          (44, 4), (44, 5), (44, 6), (44, 7), (44, 8), (44, 9), (44, 10), (47, 2), (48, 1), (48, 2), (48, 3),
          (48, 4), (48, 5), (48, 6), (48, 7), (48, 8), (48, 9), (48, 10)]
 
-# np.savetxt('1_1.x', X.det_x, fmt='%d')0
-# b = np.loadtxt('1_1.x', dtype=int)
-
+# -------------------------------------------------------------------------------------
 
 from Solver import Solver
 import numpy as np
@@ -33,12 +31,18 @@ for key in tests:
     file = 'fct/' + str(key[0]) + '_' + str(key[1]) + '.x'
     np.savetxt(file, X.det_x, fmt='%d')
 
+# -------------------------------------------------------------------------------------
+
+from Solver import Solver
+import numpy as np
+
 for key in tests:
     for it in range(100):
         X = Solver(key, 'sfct', iteration=it)
-        file = 'fct/' + str(key[0]) + '_' + str(key[1]) + '__' + str(it) + '.x'
+        file = 'sfct/' + str(key[0]) + '_' + str(key[1]) + '__' + str(it) + '.x'
         np.savetxt(file, X.det_x, fmt='%d')
 
+# -------------------------------------------------------------------------------------
 
 import os
 
@@ -46,29 +50,52 @@ names = []
 for root, dirs, files in os.walk("./sfct"):
     for filename in files:
         names.append(filename)
-
-dic = {}
+d = {}
 for i, name in enumerate(names):
     if name[-1] == 'x':
         key = [int(s) for s in name.split('_')[:2]]
         try:
-            dic[key[0], key[1]].append(int(name.split('_')[-1].split('.')[0]))
+            d[key[0], key[1]].append(int(name.split('_')[-1].split('.')[0]))
         except:
-            dic[key[0], key[1]] = list([int(name.split('_')[-1].split('.')[0])])
-
-for key in dic:
-    dic[key] = sorted(dic[key])
-
+            d[key[0], key[1]] = list([int(name.split('_')[-1].split('.')[0])])
+for key in d:
+    d[key] = sorted(d[key])
 
 import pandas as pd
 from Simulator import Simulator
+from Data import Data
+
+dic = {}
+for k in d:
+    data = Data(k)
+    data.gen_scn(20, 2000)
+    for i in d[k][:20]:
+        file = './sfct/' + str(k[0]) + '_' + str(k[1]) + '__' + str(i) + '.x'
+        X = Simulator(model_type='sfct', file=file, data=data)
+        if X.status:
+            dic[k[0], k[1], i] = [X.obj]
+        else:
+            raise Exception("status is False for {}".format(k))
+pd.DataFrame(dic)
+pd.DataFrame(dic).T.to_csv('SFCT_simulation.csv')
+
+# -------------------------------------------------------------------------------------
+
+import pandas as pd
+from Simulator import Simulator
+from Data import Data
+
 dic = {}
 for k in tests:
+    data = Data(k)
+    data.gen_scn(20, 2000)
     file = './fct/' + str(k[0]) + '_' + str(k[1]) + '.x'
-    X = Simulator(test_num=k, model_type='sfct', sample_size=20, scn_count=2000, file=file)
+    X = Simulator(model_type='sfct', file=file, data=data)
     if X.status:
         dic[k] = [X.obj]
     else:
-        raise Exception("status is False for {}".format(k))
+        dic[k] = ['FALSE']
 pd.DataFrame(dic)
 pd.DataFrame(dic).T.to_csv('FCT_simulation.csv')
+
+# -------------------------------------------------------------------------------------
