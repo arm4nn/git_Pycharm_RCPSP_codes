@@ -69,7 +69,7 @@ dic = {}
 for k in d:
     data = Data(k)
     data.gen_scn(20, 2000)
-    for i in d[k][:20]:
+    for i in d[k][:50]:
         file = './sfct/' + str(k[0]) + '_' + str(k[1]) + '__' + str(i) + '.x'
         X = Simulator(model_type='sfct', file=file, data=data)
         if X.status:
