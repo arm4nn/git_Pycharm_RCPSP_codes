@@ -136,7 +136,7 @@ class Simulator:
             obj = (quicksum(self.z[self.data.activities[-1], s] for s in self.data.scenarios) / self.data.scn_count)
         elif self.type in {'isfct'}:
             tmp_1 = quicksum(self.z[self.data.activities[-1], s] for s in self.data.scenarios) / self.data.scn_count
-            tmp_2 = quicksum(self.data.w[i] * (self.z[i, s] - self.d[i]) for i in self.data.activities for s in
+            tmp_2 = quicksum(self.data.w[i] * (self.d[i] - self.z[i, s]) for i in self.data.activities for s in
                              self.data.scenarios) / self.data.scn_count
             obj = tmp_1 + self.data.gamma * tmp_2
         else:

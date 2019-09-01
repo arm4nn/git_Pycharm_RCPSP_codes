@@ -4,12 +4,12 @@ from Data import Data
 
 
 class Solver:
-    def __init__(self, test_num=(1,1), model_type='fct', sample_size=20, scn_count=100, iteration=0):
+    def __init__(self, test_num=(1,1), model_type='fct', sample_size=20, scn_count=100, iteration=0, gamma=0.0001):
         """
         :param test_num: (<1:48>,<1:10>)
         :param model_type: 'fct', 'sfct', or 'isfct'
         """
-        self.data = Data(test_num, iteration)
+        self.data = Data(test_num, iteration, gamma=gamma)
         self.data.gen_scn(sample_size, scn_count)
         self.grb = Model('model: Solver')
         if model_type not in {'fct', 'sfct', 'isfct'}:
@@ -38,7 +38,7 @@ class Solver:
         self.add_const_6()
         self.add_const_7()
         self.add_obj()
-        self.grb.setParam('TimeLimit', 60)
+        self.grb.setParam('TimeLimit', 600)
         self.grb.setParam('OutputFlag', 0)
         self.grb.update()
         self.grb.optimize()
@@ -150,7 +150,7 @@ class Solver:
             obj = (quicksum(self.z[self.data.activities[-1], s] for s in self.data.samples) / self.data.sample_size)
         elif self.type in {'isfct'}:
             tmp_1 = quicksum(self.z[self.data.activities[-1], s] for s in self.data.samples) / self.data.sample_size
-            tmp_2 = quicksum(self.data.w[i] * (self.z[i, s] - self.d[i]) for i in self.data.activities for s in
+            tmp_2 = quicksum(self.data.w[i] * (self.d[i] - self.z[i, s]) for i in self.data.activities for s in
                              self.data.samples) / self.data.sample_size
             obj = tmp_1 + self.data.gamma * tmp_2
         else:

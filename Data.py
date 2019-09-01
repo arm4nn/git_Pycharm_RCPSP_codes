@@ -3,7 +3,7 @@ import pandas as pd
 
 
 class Data:
-    def __init__(self, test_num, iteration=None):
+    def __init__(self, test_num, iteration=None, gamma=0.01):
         """
         :param test_num: (<1:48>,<1:10>)
         """
@@ -23,8 +23,8 @@ class Data:
         self.df = self.read_data()
         self.p_scn = None
         self.p_sample = None
-        self.gamma = 0.01
-        self.w = None
+        self.gamma = gamma
+        self.w = self.gen_inventory_weights()
         self.iteration = iteration
 
     def read_data(self):
@@ -66,4 +66,8 @@ class Data:
 
         self.p_scn = dict(zip(self.activities, dur_scn))
         self.p_sample = dict(zip(self.activities, dur_sample))
-        self.w = [1 * (np.random.rand() > 0.75) for _ in self.activities]
+
+    def gen_inventory_weights(self):
+        np.random.seed(31475382 + self.test_num[0] * 10000 + self.test_num[1] * 100)
+        w = [1 * (np.random.rand() > 0.5) * np.random.rand() for _ in self.activities]
+        return w
