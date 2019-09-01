@@ -4,7 +4,7 @@ from Data import Data
 
 
 class InventorySimulator:
-    def __init__(self, file=None, data=None, bound=100):
+    def __init__(self, file=None, data=None, bound=100.0):
         self.data = data
         self.grb = Model('model: Inventory Simulator')
         self.x = np.loadtxt(file).astype(int)
@@ -29,6 +29,7 @@ class InventorySimulator:
         self.add_const_5()
         self.add_const_6()
         self.add_const_7()
+        self.add_const_8()
         self.add_obj()
         self.grb.setParam('TimeLimit', 120)
         self.grb.setParam('OutputFlag', 0)
@@ -104,13 +105,12 @@ class InventorySimulator:
             name="LastFlow")
 
     def add_const_8(self):
-        self.grb.addConstrs(
+        self.grb.addConstr(
             (quicksum(
                 self.z[self.data.activities[-1], s] for s in self.data.scenarios) / self.data.scn_count <= self.bound),
             name="ExpectedMakespanBound")
 
     def add_obj(self):
-
-        obj = quicksum(self.data.w[i] * (self.d[i] - self.z[i, s]) for i in self.data.activities for s in
+        obj = quicksum(self.data.w[i] * (self.z[i, s] - self.d[i]) for i in self.data.activities for s in
                        self.data.scenarios) / self.data.scn_count
         self.grb.setObjective(obj, GRB.MINIMIZE)
