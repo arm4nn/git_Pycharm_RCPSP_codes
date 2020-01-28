@@ -66,6 +66,12 @@ class Data:
 
         self.p_scn = dict(zip(self.activities, dur_scn))
         self.p_sample = dict(zip(self.activities, dur_sample))
+        
+        # aligning the means. Note that as we choose only a few thousands of scenarios, 
+        #...it is still a sample and its mean might be different from the self.duration. The proof we have for lower bounds
+        #...in the paper, strictly require the exact equal means. Hence, here, we are allighing the means.
+        for i in range(32):
+            self.p_scn[i] = self.p_scn[i] + self.duration[i] - self.p_scn[i].mean()
 
     def gen_inventory_weights(self):
         np.random.seed(31475382 + self.test_num[0] * 10000 + self.test_num[1] * 100)
