@@ -39,7 +39,7 @@ class Data:
         resources_count = int(df.iloc[0, 1])
         self.resources = np.array(range(resources_count))
         self.res_use = dict(zip(self.activities, resources_usage))
-        self.big_t = 150
+        self.big_t = 250
         self.available_resources = df.iloc[1, 0:resources_count].values
         self.big_r = self.available_resources.max()
         return df
